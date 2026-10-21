@@ -1,6 +1,7 @@
 
 import unittest
-from miniproject1 import seq_analyzer
+# from miniproject1 import seq_analyzer
+from instructor_mp_correction import seq_analyzer
 
 
 class TestSequenceAnalyzer(unittest.TestCase):

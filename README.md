@@ -1,0 +1,1 @@
+Why might the built-in approach be faster despite performing more traversals? Many Python built-ins execute their loops in optimised C code, whereas your custom loop runs Python bytecode. But this is an empirical question: the actual result depends on input size, data type, Python implementation, and machine.

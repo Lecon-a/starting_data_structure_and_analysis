@@ -8,7 +8,6 @@ def seq_analyzer(numbers: list[int]) -> dict:
     largest = numbers[0]
     smallest = numbers[0]
     _sum = numbers[0]
-    avg = numbers[0]
     positive_count = 1 if numbers[0] > 0 else 0
     negative_count = 1 if numbers[0] < 0 else 0
     zero_count = 1 if numbers[0] == 0 else 0
@@ -27,29 +26,29 @@ def seq_analyzer(numbers: list[int]) -> dict:
     #         'zero_count': zero_count
     #     }
 
-    for i in range(1, len(numbers)):
+    for i in range(1, len(numbers)): # O(n)
+
+        number = numbers[i]
 
         # compare for the greatest
-        if numbers[i] > largest:
-            largest = numbers[i]
+        if number > largest: 
+            largest = number
 
         # compare for the smallest
-        if numbers[i] < smallest:
-            smallest = numbers[i]
+        if number < smallest: 
+            smallest = number
 
         # add each element to _sum variable for index 1 to n-1
-        _sum += numbers[i]
+        _sum += number 
 
         # check for negative numbers
-        if numbers[i] < 0:
-            negative_count += 1
-        
         # check for positive numbers
-        if numbers[i] > 0:
-            positive_count += 1
-
         # check for zero numbers
-        if numbers[i] == 0:
+        if number < 0: 
+            negative_count += 1
+        elif number > 0: 
+            positive_count += 1
+        else:
             zero_count += 1
 
     avg = _sum / len(numbers)
